@@ -1,0 +1,254 @@
+/* ==========================================================================
+   gabela — Foundations: color + type
+   Clean, modern, confident — built for autónomos in Spain.
+   Warm office paper (not white), bold Archivo type, monospace data, and one
+   loud brand red. Sharp corners, honest borders, a hard-offset "press" shadow.
+   No rubber-stamp or manila-folder skeuomorphism — the irreverence lives in
+   the voice, the bold type and the red, not in props.
+   ========================================================================== */
+
+/* ---------- Fonts (self-hosted, latin subset) ---------------------------- */
+@font-face { font-family:'Archivo'; font-weight:400; font-style:normal; font-display:swap; src:url('fonts/archivo-400.woff2') format('woff2'); }
+@font-face { font-family:'Archivo'; font-weight:500; font-style:normal; font-display:swap; src:url('fonts/archivo-500.woff2') format('woff2'); }
+@font-face { font-family:'Archivo'; font-weight:600; font-style:normal; font-display:swap; src:url('fonts/archivo-600.woff2') format('woff2'); }
+@font-face { font-family:'Archivo'; font-weight:700; font-style:normal; font-display:swap; src:url('fonts/archivo-700.woff2') format('woff2'); }
+@font-face { font-family:'Archivo'; font-weight:800; font-style:normal; font-display:swap; src:url('fonts/archivo-800.woff2') format('woff2'); }
+@font-face { font-family:'Archivo'; font-weight:900; font-style:normal; font-display:swap; src:url('fonts/archivo-900.woff2') format('woff2'); }
+
+@font-face { font-family:'Spline Sans Mono'; font-weight:400; font-style:normal; font-display:swap; src:url('fonts/spline-sans-mono-400.woff2') format('woff2'); }
+@font-face { font-family:'Spline Sans Mono'; font-weight:500; font-style:normal; font-display:swap; src:url('fonts/spline-sans-mono-500.woff2') format('woff2'); }
+@font-face { font-family:'Spline Sans Mono'; font-weight:600; font-style:normal; font-display:swap; src:url('fonts/spline-sans-mono-600.woff2') format('woff2'); }
+@font-face { font-family:'Spline Sans Mono'; font-weight:700; font-style:normal; font-display:swap; src:url('fonts/spline-sans-mono-700.woff2') format('woff2'); }
+
+:root {
+  /* ---------- Color: raw tokens --------------------------------------- */
+  /* Paper / surfaces (warm office paper, not white) */
+  --paper:        #F3EDDF;   /* app/page background  */
+  --paper-2:      #FBF8F0;   /* raised cards / sheets */
+  --paper-3:      #FFFFFF;   /* crisp white insets, inputs */
+  --paper-4:      #EAE2D1;   /* secondary surface / hover */
+  --paper-5:      #DED5C0;   /* deeper secondary / table headers */
+
+  /* Ink */
+  --ink:          #1B1712;   /* primary text — warm near-black */
+  --ink-2:        #443D32;   /* secondary text */
+  --ink-3:        #7C7361;   /* muted / captions */
+  --ink-inv:      #FBF8F0;   /* text on dark/colored */
+  --line:         #D8CCB3;   /* hairline on paper */
+  --line-strong:  #B7A988;   /* stronger rule / table grid */
+
+  /* Rojo — the brand accent (one loud red) */
+  --rojo:        #DC2A1E;
+  --rojo-deep:   #B11C12;   /* hover / pressed */
+  --rojo-ink:    #931308;   /* text on tint */
+  --rojo-tint:   #F6DAD4;   /* soft red wash */
+
+  /* Tinta — violet secondary accent */
+  --tinta:        #4131A4;
+  --tinta-deep:   #322586;
+  --tinta-tint:   #E3DFF3;
+
+  /* Semantic */
+  --verde:        #1C7A50;   /* positive: presentado, devolución */
+  --verde-deep:   #145E3D;
+  --verde-tint:   #D6E9DD;
+  --ambar:        #C9820F;   /* warning: plazo, vencimiento */
+  --ambar-deep:   #9E660A;
+  --ambar-tint:   #F4E5C5;
+  --peligro:      #C21A10;   /* danger: deuda, sanción */
+  --peligro-tint: #F6D7D3;
+
+  /* ---------- Color: semantic roles ----------------------------------- */
+  --bg:           var(--paper);
+  --surface:      var(--paper-2);
+  --surface-alt:  var(--paper-4);
+  --fg:           var(--ink);
+  --fg-2:         var(--ink-2);
+  --fg-muted:     var(--ink-3);
+  --border:       var(--line);
+  --border-bold:  var(--ink);
+  --accent:       var(--rojo);
+  --accent-fg:    var(--ink-inv);
+
+  /* ---------- Type families ------------------------------------------- */
+  --font-display: 'Archivo', 'Helvetica Neue', system-ui, sans-serif;
+  --font-sans:    'Archivo', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Spline Sans Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* ---------- Type scale (px) ----------------------------------------- */
+  --t-display: 72px;  --t-display-lh: 0.92; /* @kind font */
+  --t-h1:      48px;  --t-h1-lh: 1.0; /* @kind font */
+  --t-h2:      34px;  --t-h2-lh: 1.05; /* @kind font */
+  --t-h3:      24px;  --t-h3-lh: 1.12; /* @kind font */
+  --t-h4:      19px;  --t-h4-lh: 1.2; /* @kind font */
+  --t-body:    16px;  --t-body-lh: 1.55; /* @kind font */
+  --t-small:   14px;  --t-small-lh: 1.45; /* @kind font */
+  --t-micro:   12px;  --t-micro-lh: 1.35; /* @kind font */
+  --t-label:   11px;  --t-label-lh: 1.2; /* @kind font */  /* uppercase mono form labels */
+
+  /* ---------- Spacing (4px base) -------------------------------------- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-24: 96px;
+
+  /* ---------- Radius (sharp — confident, document-like) --------------- */
+  --r-xs: 1px;  --r-sm: 3px;  --r-md: 5px;  --r-lg: 8px;  --r-pill: 999px;
+
+  /* ---------- Borders -------------------------------------------------- */
+  --bw:      1px;          /* hairline */
+  --bw-2:    1.5px;        /* form field */
+  --bw-3:    2.5px;        /* emphasis */
+
+  /* ---------- Shadows (hard printed-paper offset, not soft blur) ------ */
+  --shadow-paper:  0 1px 0 var(--line-strong);
+  --shadow-card:   2px 3px 0 rgba(27,23,18,0.14);
+  --shadow-press:  4px 4px 0 var(--ink);          /* the signature lift / press */
+  --shadow-press-red: 4px 4px 0 var(--rojo-deep);
+  --shadow-pop:    0 8px 24px rgba(27,23,18,0.18);
+
+  /* ---------- Motion (snappy, physical — never bouncy) --------------- */
+  --ease:      cubic-bezier(.2,.7,.2,1); /* @kind other */   /* the house curve */
+  --ease-out:  cubic-bezier(0,.6,.3,1); /* @kind other */    /* settle-out for entrances */
+  --dur-1:     120ms; /* @kind other */   /* taps, hovers, the press */
+  --dur-2:     180ms; /* @kind other */   /* default transition */
+  --dur-3:     220ms; /* @kind other */   /* drawers / larger moves */
+
+  /* ---------- Z-index (one ladder, no magic numbers) ----------------- */
+  --z-base:      0; /* @kind other */
+  --z-raised:    10; /* @kind other */    /* a hover-lifted card */
+  --z-sticky:    50; /* @kind other */    /* sticky topbar / nav */
+  --z-dropdown:  100; /* @kind other */   /* menus, selects, popovers */
+  --z-drawer:    200; /* @kind other */   /* side drawer (nueva factura) */
+  --z-modal:     300; /* @kind other */   /* dialog + its scrim */
+  --z-toast:     400; /* @kind other */   /* confirmations */
+  --z-tooltip:   500; /* @kind other */   /* always on top */
+
+  /* ---------- Layout & breakpoints ----------------------------------- */
+  /* CSS media queries can't read custom props — these are the canonical
+     reference values; mirror them in @media and in JS. */
+  --bp-sm:   640px; /* @kind spacing */
+  --bp-md:   900px; /* @kind spacing */    /* kits drop to single column / burger nav here */
+  --bp-lg:   1160px; /* @kind spacing */
+  --bp-xl:   1440px; /* @kind spacing */
+  --container: 1160px; /* @kind spacing */ /* page max content width across kits */
+  --gutter:    32px; /* @kind spacing */   /* desktop page side padding (22px on mobile) */
+
+  /* ---------- Icon sizes (Lucide, currentColor) ---------------------- */
+  --icon-sm: 16px;   /* dense rows, inline */
+  --icon-md: 20px;   /* default UI */
+  --icon-lg: 24px;   /* feature / nav emphasis */
+
+  /* ---------- Motif opacity (dot-grid / rules — never fight content) -- */
+  --motif-min: 0.04; /* @kind other */
+  --motif-max: 0.08; /* @kind other */
+
+  /* ---------- Data-viz (ordered series + chart furniture) ------------ */
+  --series-1: var(--rojo);    /* primary: ingresos */
+  --series-2: var(--tinta);   /* secondary: gastos */
+  --series-3: var(--verde);   /* positive */
+  --series-4: var(--ambar);   /* warning */
+  --chart-grid: var(--line);  /* horizontal rules — quiet */
+  --chart-axis: var(--ink-3); /* tick labels */
+}
+
+/* ==========================================================================
+   DARK THEME — the priority surface (the product runs dark by default).
+   "Oficina a medianoche": warm carbon-black paper, ink reversed to cream,
+   the brand red brightened so it still shouts. Apply [data-theme="dark"].
+   Component CSS should reference the SEMANTIC roles below so it auto-flips.
+   ========================================================================== */
+[data-theme="dark"] {
+  /* surfaces — warm near-black, never pure #000 */
+  --paper:        #15120C;
+  --paper-2:      #1E1A12;   /* panels / cards */
+  --paper-3:      #110E09;   /* inset fields, darker than bg */
+  --paper-4:      #241E15;   /* secondary surface / hover */
+  --paper-5:      #2F2719;   /* deeper secondary / table headers */
+
+  /* ink, reversed */
+  --ink:          #F1EADB;   /* primary text = cream */
+  --ink-2:        #C7BBA0;
+  --ink-3:        #8B7F66;
+  --ink-inv:      #15120C;    /* text on the bright accent */
+  --line:         #322817;
+  --line-strong:  #4A3D26;
+
+  /* rojo — brightened for dark */
+  --rojo:        #EE4233;
+  --rojo-deep:   #C8281B;
+  --rojo-ink:    #F4A89E;   /* red text on dark tint */
+  --rojo-tint:   rgba(238,66,51,0.16);
+
+  /* tinta */
+  --tinta:        #8E7BF0;
+  --tinta-deep:   #B4A7F4;
+  --tinta-tint:   rgba(142,123,240,0.16);
+
+  /* semantic — bright text + low-alpha fills for dark */
+  --verde:        #2FA56E;
+  --verde-deep:   #67D29F;
+  --verde-tint:   rgba(47,165,110,0.15);
+  --ambar:        #D69426;
+  --ambar-deep:   #ECB85E;
+  --ambar-tint:   rgba(214,148,38,0.16);
+  --peligro:      #E0473B;
+  --peligro-tint: rgba(224,71,59,0.16);
+
+  --border-bold:  var(--ink);
+
+  /* shadows — hard offset reads as deeper black on dark */
+  --shadow-paper:  0 1px 0 #000;
+  --shadow-card:   2px 3px 0 rgba(0,0,0,0.45);
+  --shadow-press:  4px 4px 0 #000;
+  --shadow-press-red: 4px 4px 0 var(--rojo-deep);
+  --shadow-pop:    0 10px 30px rgba(0,0,0,0.55);
+}
+
+/* ==========================================================================
+   Semantic element defaults — apply via classes or by tag in a kit reset
+   ========================================================================== */
+.gb-display { font-family:var(--font-display); font-weight:900; font-size:var(--t-display); line-height:var(--t-display-lh); letter-spacing:-0.03em; text-transform:uppercase; color:var(--fg); }
+.gb-h1 { font-family:var(--font-display); font-weight:800; font-size:var(--t-h1); line-height:var(--t-h1-lh); letter-spacing:-0.02em; color:var(--fg); }
+.gb-h2 { font-family:var(--font-display); font-weight:800; font-size:var(--t-h2); line-height:var(--t-h2-lh); letter-spacing:-0.015em; color:var(--fg); }
+.gb-h3 { font-family:var(--font-sans); font-weight:700; font-size:var(--t-h3); line-height:var(--t-h3-lh); letter-spacing:-0.01em; color:var(--fg); }
+.gb-h4 { font-family:var(--font-sans); font-weight:700; font-size:var(--t-h4); line-height:var(--t-h4-lh); color:var(--fg); }
+.gb-body { font-family:var(--font-sans); font-weight:400; font-size:var(--t-body); line-height:var(--t-body-lh); color:var(--fg); }
+.gb-small { font-family:var(--font-sans); font-weight:400; font-size:var(--t-small); line-height:var(--t-small-lh); color:var(--fg-2); }
+.gb-micro { font-family:var(--font-sans); font-weight:500; font-size:var(--t-micro); line-height:var(--t-micro-lh); color:var(--fg-muted); }
+.gb-data { font-family:var(--font-mono); font-weight:500; font-variant-numeric:tabular-nums; color:var(--fg); }
+
+/* The form label — mono uppercase, used on fields and metadata */
+.gb-label {
+  font-family:var(--font-mono); font-weight:600; font-size:var(--t-label);
+  line-height:var(--t-label-lh); letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--fg-muted);
+}
+/* Casilla — the numbered box reference from a modelo (data flavor) */
+.gb-casilla {
+  font-family:var(--font-mono); font-weight:700; font-size:11px; letter-spacing:0.04em;
+  color:var(--rojo-ink); background:var(--rojo-tint); border:1px solid var(--rojo);
+  padding:1px 5px; border-radius:var(--r-xs);
+}
+
+/* ==========================================================================
+   Accessibility — focus, hit targets, motion (implemented, not just spec)
+   ========================================================================== */
+/* Visible focus ring — rojo halo offset from the element, on keyboard nav.
+   Uses :focus-visible so a mouse click doesn't show the ring. */
+:where(a, button, input, select, textarea, [tabindex], [role="button"], [role="tab"]):focus-visible {
+  outline: 2.5px solid var(--rojo);
+  outline-offset: 2px;
+  border-radius: var(--r-xs);
+}
+/* Hit target floor — interactive controls should clear 44×44 (use as a min). */
+.gb-hit { min-width: 44px; min-height: 44px; }
+
+/* Respect reduced-motion: drop transitions, animations and the press travel. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
