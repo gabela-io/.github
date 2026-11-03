@@ -36,6 +36,20 @@ const banners = {
     rows: [['Entrada', 'Ficheros <small>.boe</small>'], ['Salida', 'Código Rust'],
            ['Genera', 'Serializa · deserializa · valida'], ['Modelos', '130 <small>· pago fraccionado</small>']],
   },
+  'dgt-consultas-vinculantes': {
+    crumb: crumb('dgt-consultas-vinculantes'), kicker: 'DGT · Consultas vinculantes', name: 'consultas', fs: 104,
+    head: 'Toda la doctrina vinculante de la DGT, <em>en abierto y al día.</em>',
+    form: 'Ficha técnica', tag: 'No oficial',
+    rows: [['Corpus', 'Casi 70.000 consultas <small>· desde 1997</small>'], ['Formato', 'Markdown <small>· una por fichero</small>'],
+           ['Búsqueda', 'SQLite FTS5 · MCP'], ['Vigencia', 'Cotejo con el BOE']],
+  },
+  'aeat-downloader': {
+    crumb: crumb('aeat-downloader'), kicker: 'AEAT · Declaraciones presentadas', name: 'justificantes', fs: 84,
+    head: 'Tus declaraciones presentadas, <em>descargadas desde Chrome.</em>',
+    form: 'Ficha técnica', tag: 'No oficial',
+    rows: [['Formato', 'Extensión de Chrome <small>· MV3</small>'], ['Modelos', '100 · 130 · 303 · 347 · 349 · 390'],
+           ['Acceso', 'Tu certificado en Chrome'], ['Tus datos', 'Solo lectura <small>· sin terceros</small>']],
+  },
   website: {
     crumb: crumb('website'), kicker: 'Documentación', name: 'website',
     head: 'Lo que la administración no explica, <em>explicado.</em>',
